@@ -62,120 +62,120 @@ This architecture enables efficient and high-quality speech synthesis while main
 ### English
 
 **Christopher**  
-*Prompt*: "Hello I can speak in English as christopher, one of the voices I can speak."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/English/christopher.wav"></audio>
+*Prompt*: "Hello I can speak in English as christopher, one of the voices I can speak."  
+[Listen to Christopher's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/English/christopher.wav)
 
 **Barbara**  
-*Prompt*: "Or as barbra, this is one of my female voices. Pretty cool right?."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/English/barbara.wav"></audio>
+*Prompt*: "Or as barbra, this is one of my female voices. Pretty cool right?."  
+[Listen to Barbara's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/English/barbara.wav)
 
 **Mary**  
-*Prompt*: "I can also speak as Mary as well."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/English/mary.wav"></audio>
+*Prompt*: "I can also speak as Mary as well."  
+[Listen to Mary's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/English/mary.wav)
 
 **James**  
-*Prompt*: "Or I can speak as james as you can see."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/English/james.wav"></audio>
+*Prompt*: "Or I can speak as james as you can see."  
+[Listen to James' message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/English/james.wav)
 
 **Jessica**  
-*Prompt*: "This is my other voice called jessica, I have more voices of jennifer, suzan, linda, patricia and elizabeth. But I will be sharing these voices once I am fully done from baking."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/English/jessica.wav"></audio>
+*Prompt*: "This is my other voice called jessica, I have more voices of jennifer, suzan, linda, patricia and elizabeth. But I will be sharing these voices once I am fully done from baking."  
+[Listen to Jessica's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/English/jessica.wav)
 
 ### Luganda
 
 **Christopher**  
-*Prompt*: "Nsobolla okwo'geranga Christopher nga wowulila kati."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Luganda/christopher.wav"></audio>
+*Prompt*: "Nsobolla okwo'geranga Christopher nga wowulila kati."  
+[Listen to Christopher's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Luganda/christopher.wav)
 
 **Charles**  
-*Prompt*: "Oba neenjogela nga charles wenti."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Luganda/charles.wav"></audio>
+*Prompt*: "Oba neenjogela nga charles wenti."  
+[Listen to Charles' message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Luganda/charles.wav)
 
 **Sandra**  
-*Prompt*: "Nina neddoboozi lya Sandra bweliti."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Luganda/sandra.wav"></audio>
+*Prompt*: "Nina neddoboozi lya Sandra bweliti."  
+[Listen to Sandra's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Luganda/sandra.wav)
 
 **Michelle**  
-*Prompt*: "Nsobolla ogwogella bwenti mulino eddoboozi."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Luganda/michelle.wav"></audio>
+*Prompt*: "Nsobolla ogwogella bwenti mulino eddoboozi."  
+[Listen to Michelle's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Luganda/michelle.wav)
 
 **Daniel**  
-*Prompt*: "Oba nemulino elye'kisajja nga woowulira."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Luganda/daniel.wav"></audio>
+*Prompt*: "Oba nemulino elye'kisajja nga woowulira."  
+[Listen to Daniel's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Luganda/daniel.wav)
 
 **Margaret**  
-*Prompt*: "Charlissi yimilila awo."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Luganda/margaret.wav"></audio>
+*Prompt*: "Charlissi yimilila awo."  
+[Listen to Margaret's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Luganda/margaret.wav)
 
 **Mark**  
-*Prompt*: "Ninna amaloboozi amalala naye nja kugalaga nga mazze oku tureyininga."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Luganda/mark.wav"></audio>
+*Prompt*: "Ninna amaloboozi amalala naye nja kugalaga nga mazze oku tureyininga."  
+[Listen to Mark's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Luganda/mark.wav)
 
 ### Runyonkole
 
 **Christopher**  
-*Prompt*: "Nimbasa kugamba nka Christopher omwiraka eri."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Runyankole/christopher.wav"></audio>
+*Prompt*: "Nimbasa kugamba nka Christopher omwiraka eri."  
+[Listen to Christopher's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Runyankole/christopher.wav)
 
 **Michelle**  
-*Prompt*: "Nimbasa kugamba nka Michelle omwiraka eri."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Runyankole/michelle.wav"></audio>
+*Prompt*: "Nimbasa kugamba nka Michelle omwiraka eri."  
+[Listen to Michelle's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Runyankole/michelle.wav)
 
 **James**  
-*Prompt*: "Uganda eteire amaani aha buhingi n'oburiisa."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Runyankole/james.wav"></audio>
+*Prompt*: "Uganda eteire amaani aha buhingi n'oburiisa."  
+[Listen to James' message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Runyankole/james.wav)
 
 **Patricia**  
-*Prompt*: "Bimwe ebirikugambwa aha reediyo nibihwera abantu kumanya obutare burungi bw'amasharuura gaabo."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Runyankole/patricia.wav"></audio>
+*Prompt*: "Bimwe ebirikugambwa aha reediyo nibihwera abantu kumanya obutare burungi bw'amasharuura gaabo."  
+[Listen to Patricia's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Runyankole/patricia.wav)
 
 **Charles**  
-*Prompt*: "Okukyerererwa kufuuhirira nikyo kirikutokooza ebyokurya ebitwine ebiro ebi."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Runyankole/charles.wav"></audio>
+*Prompt*: "Okukyerererwa kufuuhirira nikyo kirikutokooza ebyokurya ebitwine ebiro ebi."  
+[Listen to Charles' message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Runyankole/charles.wav)
 
 **Elizabeth**  
-*Prompt*: "Omu disiturikiti ya Kayunga emisiri erikukira obwngi ekashangwa erimu ebicoori ebiine oburwaire."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Runyankole/elizabeth.wav"></audio>
+*Prompt*: "Omu disiturikiti ya Kayunga emisiri erikukira obwngi ekashangwa erimu ebicoori ebiine oburwaire."  
+[Listen to Elizabeth's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Runyankole/elizabeth.wav)
 
 ### Tesso
 
 **Christopher**  
-*Prompt*: "Epedorete akoriok aimedaun ejok kanejaas aicoreta nu itikitikere adeka."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Teso/christopher.wav"></audio>
+*Prompt*: "Epedorete akoriok aimedaun ejok kanejaas aicoreta nu itikitikere adeka."  
+[Listen to Christopher's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Teso/christopher.wav)
 
 **Jessica**  
-*Prompt*: "Akoru ikorion luegelegela nes ingarakini itunganan."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Teso/jessica.wav"></audio>
+*Prompt*: "Akoru ikorion luegelegela nes ingarakini itunganan."  
+[Listen to Jessica's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Teso/jessica.wav)
 
 **James**  
-*Prompt*: "Iraasit yen emunaara aticepak ikur enyamitos."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Teso/james.wav"></audio>
+*Prompt*: "Iraasit yen emunaara aticepak ikur enyamitos."  
+[Listen to James' message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Teso/james.wav)
 
 **Daniel**  
-*Prompt*: "Aipagisanar nes ewai ecie lo ibwaikinet iboro toma aswam."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Teso/daniel.wav"></audio>
+*Prompt*: "Aipagisanar nes ewai ecie lo ibwaikinet iboro toma aswam."  
+[Listen to Daniel's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Teso/daniel.wav)
 
 **Barbara**  
-*Prompt*: "Isisianakinete isomeroi kwana asiomak eipone lo isubusaere."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Teso/barbara.wav"></audio>
+*Prompt*: "Isisianakinete isomeroi kwana asiomak eipone lo isubusaere."  
+[Listen to Barbara's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Teso/barbara.wav)
 
 ### Acholi
 
 **Mark**  
-*Prompt*: "Uganda tye ka keme ki lok me pur."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Acholi/mark.wav"></audio>
+*Prompt*: "Uganda tye ka keme ki lok me pur."  
+[Listen to Mark's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Acholi/mark.wav)
 
 **Barbara**  
-*Prompt*: "Lupur twero nongo kony ma dit ka gunongo ngec me gengo onyo cango two ma balo jami ma i poto."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Acholi/barbara.wav"></audio>
+*Prompt*: "Lupur twero nongo kony ma dit ka gunongo ngec me gengo onyo cango two ma balo jami ma i poto."  
+[Listen to Barbara's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Acholi/barbara.wav)
 
 **James**  
-*Prompt*: "Ler ma pe gidodo ma woto ka yenyo cam i dye poto obalo cam weng ma tye i poto."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Acholi/james.wav"></audio>
+*Prompt*: "Ler ma pe gidodo ma woto ka yenyo cam i dye poto obalo cam weng ma tye i poto."  
+[Listen to James' message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Acholi/james.wav)
 
 **Michelle**  
-*Prompt*: "Gum madwong me timo biacara tye i te yub ma pe jenge i kom gamente."
-<audio controls src="https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Acholi/mitchelle.wav"></audio>
+*Prompt*: "Gum madwong me timo biacara tye i te yub ma pe jenge i kom gamente."  
+[Listen to Michelle's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Acholi/mitchelle.wav)
 
 ---
 
@@ -229,10 +229,3 @@ If you use these models in your research or applications, please cite:
     howpublished = {\url{https://huggingface.co/Uganda-lang}},
     note = {Fine-tuned versions of Orpheus 3B for Ugandan languages}
 }
-```
-
----
-
-**Contributing**: We welcome contributions, feedback, and collaboration from the community. Please feel free to open issues or submit pull requests to help improve these models.
-
-**Contact**: For questions, collaborations, or support, please reach out through the HuggingFace model repository or create an issue in our GitHub repository.
