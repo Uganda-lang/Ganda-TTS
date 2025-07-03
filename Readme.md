@@ -23,7 +23,7 @@ A comprehensive suite of Text-to-Speech (TTS) models for Ugandan languages, supp
 
 This project introduces a groundbreaking collection of Text-to-Speech models specifically designed for Ugandan languages. These models represent a significant advancement in African language technology, addressing the critical gap in speech synthesis capabilities for Uganda's diverse linguistic landscape.
 
-The Uganda TTS model family consists of fine-tuned versions of the **Orpheus 3B model**, each specialized for different Ugandan languages while maintaining high-quality speech synthesis capabilities. Each language model supports multiple distinct speaker voices, enabling versatile applications in education, accessibility, content creation, and digital preservation of Ugandan languages.
+The Uganda TTS model family consists of fine-tuned versions of the **Orpheus 3B model**, each specialized for different Ugandan languages while maintaining quality speech synthesis capabilities. Each language model supports multiple distinct speaker voices, enabling versatile applications in education, accessibility, content creation, and digital preservation of Ugandan languages.
 
 These models are designed to serve researchers, developers, educators, and content creators who need high-quality speech synthesis in Ugandan languages, contributing to the broader goal of digital language preservation and accessibility in Africa.
 
@@ -34,7 +34,7 @@ The Uganda TTS models utilize a sophisticated two-stage architecture:
 1. **Audio Token Generation**: The models generate audio tokens based on the SNAC (Structured Neural Audio Codec) framework
 2. **Fine-tuned Processing**: These audio tokens are then processed through specialized fine-tuned versions of the Orpheus 3B model, each optimized for specific Ugandan languages
 
-This architecture enables efficient and high-quality speech synthesis while maintaining computational efficiency suitable for various deployment scenarios.
+This architecture enables efficient and high-quality speech synthesis while maintaining computational efficiency suitable for various deployment scenarios. More about the Orpheous Models [here](https://canopylabs.ai/releases/orpheus_can_speak_any_language)
 
 ---
 
