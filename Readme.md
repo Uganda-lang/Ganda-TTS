@@ -11,7 +11,7 @@ A comprehensive suite of Text-to-Speech (TTS) models for Ugandan languages, supp
 - [Introduction](#introduction)
 - [Model Architecture](#model-architecture)
 - [Supported Languages & Voices](#supported-languages--voices)
-- [Audio Examples](#audio-examples)
+- [Inference Example](#inference-examples)
 - [Access & Usage](#access--usage)
 - [Limitations](#limitations)
 - [Future Work](#future-work)
@@ -57,127 +57,161 @@ This architecture enables efficient and high-quality speech synthesis while main
 
 ---
 
-## Audio Examples
+## Inference Examples
 
-### English
+### English Inference Example
 
-**Christopher**  
-*Prompt*: "Hello I can speak in English as christopher, one of the voices I can speak."  
-[Listen to Christopher's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/English/christopher.wav)
+Below is an example of how to use the Uganda TTS English model for inference. For other languages, please visit the [HuggingFace repository](https://huggingface.co/Uganda-lang) for the appropriate model names and instructions.
 
-**Barbara**  
-*Prompt*: "Or as barbra, this is one of my female voices. Pretty cool right?."  
-[Listen to Barbara's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/English/barbara.wav)
+```python
+from unsloth import FastLanguageModel
+import torch
 
-**Mary**  
-*Prompt*: "I can also speak as Mary as well."  
-[Listen to Mary's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/English/mary.wav)
+# Download the English multi-speaker model
+model, tokenizer = FastLanguageModel.from_pretrained(
+    model_name = "Uganda-lang/Orpheous-Eng-multi-speaker",
+    max_seq_length=2048,  # Choose any for long context!
+    dtype=None,           # Select None for auto detection
+    load_in_4bit=True,    # Select True for 4bit which reduces memory usage
+    token="[token]",      # Replace with your HuggingFace token
+)
+```
 
-**James**  
-*Prompt*: "Or I can speak as james as you can see."  
-[Listen to James' message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/English/james.wav)
+```python
+# Download the SNAC model
+from snac import SNAC
 
-**Jessica**  
-*Prompt*: "This is my other voice called jessica, I have more voices of jennifer, suzan, linda, patricia and elizabeth. But I will be sharing these voices once I am fully done from baking."  
-[Listen to Jessica's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/English/jessica.wav)
+snac_model = SNAC.from_pretrained("hubertsiuzdak/snac_24khz",
+                                  token="[token]")
+snac_model = snac_model.to("cuda")
+```
 
-### Luganda
+```python
+import torch
+import gc
+from IPython.display import display, Audio
 
-**Christopher**  
-*Prompt*: "Nsobolla okwo'geranga Christopher nga wowulila kati."  
-[Listen to Christopher's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Luganda/christopher.wav)
+def generate_audio_from_prompt(
+    prompt: str,
+    chosen_voice: str,
+    model,
+    tokenizer,
+    snac_model,
+    display_result: bool = True
+) -> torch.Tensor:
+    """
+    Generates audio from a text prompt, with explicit memory cleanup steps.
 
-**Charles**  
-*Prompt*: "Oba neenjogela nga charles wenti."  
-[Listen to Charles' message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Luganda/charles.wav)
+    Args:
+        prompt (str): The text prompt to generate audio for.
+        chosen_voice (str): The voice to use for the prompt (e.g., "christopher").
+        model: The pre-loaded main language model.
+        tokenizer: The pre-loaded tokenizer for the language model.
+        snac_model: The pre-loaded SNAC audio model.
+        display_result (bool): If True, prints the prompt and displays an audio player.
 
-**Sandra**  
-*Prompt*: "Nina neddoboozi lya Sandra bweliti."  
-[Listen to Sandra's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Luganda/sandra.wav)
+    Returns:
+        torch.Tensor: The generated audio waveform as a PyTorch tensor on the CPU.
+    """
 
-**Michelle**  
-*Prompt*: "Nsobolla ogwogella bwenti mulino eddoboozi."  
-[Listen to Michelle's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Luganda/michelle.wav)
+    # --- Helper function for audio decoding ---
+    def redistribute_codes(code_list, device):
+        """Restructures flat code list and places tensors on the correct device."""
+        layer_1, layer_2, layer_3 = [], [], []
+        for i in range(len(code_list) // 7):
+            base_idx = 7 * i
+            layer_1.append(code_list[base_idx])
+            layer_2.append(code_list[base_idx + 1] - 4096)
+            layer_3.append(code_list[base_idx + 2] - (2 * 4096))
+            layer_3.append(code_list[base_idx + 3] - (3 * 4096))
+            layer_2.append(code_list[base_idx + 4] - (4 * 4096))
+            layer_3.append(code_list[base_idx + 5] - (5 * 4096))
+            layer_3.append(code_list[base_idx + 6] - (6 * 4096))
 
-**Daniel**  
-*Prompt*: "Oba nemulino elye'kisajja nga woowulira."  
-[Listen to Daniel's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Luganda/daniel.wav)
+        codes = [
+            torch.tensor(layer_1, device=device, dtype=torch.long).unsqueeze(0),
+            torch.tensor(layer_2, device=device, dtype=torch.long).unsqueeze(0),
+            torch.tensor(layer_3, device=device, dtype=torch.long).unsqueeze(0)
+        ]
+        audio_hat = snac_model.decode(codes)
+        return audio_hat
 
-**Margaret**  
-*Prompt*: "Charlissi yimilila awo."  
-[Listen to Margaret's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Luganda/margaret.wav)
+    device = model.device
 
-**Mark**  
-*Prompt*: "Ninna amaloboozi amalala naye nja kugalaga nga mazze oku tureyininga."  
-[Listen to Mark's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Luganda/mark.wav)
+    with torch.inference_mode():
+        formatted_prompt = f"{chosen_voice}: {prompt}" if chosen_voice else prompt
+        input_ids = tokenizer(formatted_prompt, return_tensors="pt").input_ids
 
-### Runyonkole
+        start_token = torch.tensor([[128259]], dtype=torch.int64)
+        end_tokens = torch.tensor([[128009, 128260]], dtype=torch.int64)
+        modified_input_ids = torch.cat([start_token, input_ids, end_tokens], dim=1)
 
-**Christopher**  
-*Prompt*: "Nimbasa kugamba nka Christopher omwiraka eri."  
-[Listen to Christopher's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Runyankole/christopher.wav)
+        generated_ids = model.generate(
+            input_ids=modified_input_ids.to(device),
+            max_new_tokens=2048,
+            do_sample=True,
+            temperature=0.6,
+            top_p=0.95,
+            repetition_penalty=1.1,
+            num_return_sequences=1,
+            eos_token_id=128258,
+            use_cache=True
+        )
 
-**Michelle**  
-*Prompt*: "Nimbasa kugamba nka Michelle omwiraka eri."  
-[Listen to Michelle's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Runyankole/michelle.wav)
+        token_to_find = 128257
+        token_to_remove = 128258
 
-**James**  
-*Prompt*: "Uganda eteire amaani aha buhingi n'oburiisa."  
-[Listen to James' message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Runyankole/james.wav)
+        token_indices = (generated_ids == token_to_find).nonzero(as_tuple=True)
+        if len(token_indices[1]) > 0:
+            last_occurrence_idx = token_indices[1][-1].item()
+            cropped_tensor = generated_ids[:, last_occurrence_idx + 1:]
+        else:
+            cropped_tensor = generated_ids
 
-**Patricia**  
-*Prompt*: "Bimwe ebirikugambwa aha reediyo nibihwera abantu kumanya obutare burungi bw'amasharuura gaabo."  
-[Listen to Patricia's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Runyankole/patricia.wav)
+        processed_tensor = cropped_tensor[cropped_tensor != token_to_remove]
 
-**Charles**  
-*Prompt*: "Okukyerererwa kufuuhirira nikyo kirikutokooza ebyokurya ebitwine ebiro ebi."  
-[Listen to Charles' message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Runyankole/charles.wav)
+        row_length = processed_tensor.size(0)
+        new_length = (row_length // 7) * 7
+        trimmed_tensor = processed_tensor[:new_length]
 
-**Elizabeth**  
-*Prompt*: "Omu disiturikiti ya Kayunga emisiri erikukira obwngi ekashangwa erimu ebicoori ebiine oburwaire."  
-[Listen to Elizabeth's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Runyankole/elizabeth.wav)
+        code_list = [t.item() - 128266 for t in trimmed_tensor.cpu()]
 
-### Tesso
+        samples_gpu = redistribute_codes(code_list, device=device)
+        samples_cpu = samples_gpu.squeeze().cpu()
 
-**Christopher**  
-*Prompt*: "Epedorete akoriok aimedaun ejok kanejaas aicoreta nu itikitikere adeka."  
-[Listen to Christopher's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Teso/christopher.wav)
+    del generated_ids
+    del cropped_tensor
+    del processed_tensor
+    del trimmed_tensor
+    del code_list
+    del samples_gpu
+    if 'modified_input_ids' in locals(): del modified_input_ids
 
-**Jessica**  
-*Prompt*: "Akoru ikorion luegelegela nes ingarakini itunganan."  
-[Listen to Jessica's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Teso/jessica.wav)
+    gc.collect()
+    torch.cuda.empty_cache()
 
-**James**  
-*Prompt*: "Iraasit yen emunaara aticepak ikur enyamitos."  
-[Listen to James' message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Teso/james.wav)
+    if display_result:
+        print(f"Prompt: {prompt}")
+        display(Audio(samples_cpu.numpy(), rate=24000))
 
-**Daniel**  
-*Prompt*: "Aipagisanar nes ewai ecie lo ibwaikinet iboro toma aswam."  
-[Listen to Daniel's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Teso/daniel.wav)
+    return samples_cpu
+```
 
-**Barbara**  
-*Prompt*: "Isisianakinete isomeroi kwana asiomak eipone lo isubusaere."  
-[Listen to Barbara's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Teso/barbara.wav)
+```python
+my_prompt = "Hello I can speak in English as christopher, one of the voices I can speak."
+my_voice = "christopher"
 
-### Acholi
+# Call the function to generate and display the audio
+generated_audio_tensor = generate_audio_from_prompt(
+    prompt=my_prompt,
+    chosen_voice=my_voice,
+    model=model,
+    tokenizer=tokenizer,
+    snac_model=snac_model
+)
+```
 
-**Mark**  
-*Prompt*: "Uganda tye ka keme ki lok me pur."  
-[Listen to Mark's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Acholi/mark.wav)
-
-**Barbara**  
-*Prompt*: "Lupur twero nongo kony ma dit ka gunongo ngec me gengo onyo cango two ma balo jami ma i poto."  
-[Listen to Barbara's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Acholi/barbara.wav)
-
-**James**  
-*Prompt*: "Ler ma pe gidodo ma woto ka yenyo cam i dye poto obalo cam weng ma tye i poto."  
-[Listen to James' message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Acholi/james.wav)
-
-**Michelle**  
-*Prompt*: "Gum madwong me timo biacara tye i te yub ma pe jenge i kom gamente."  
-[Listen to Michelle's message](https://github.com/Uganda-lang/Ganda-TTS/raw/refs/heads/main/Example/Acholi/mitchelle.wav)
-
----
+The Notebooks Folder For more detailed examples
 
 ## Access & Usage
 
@@ -211,7 +245,6 @@ While these models represent significant progress in Ugandan language TTS, there
 
 ### In Progress 🔄
 - [ ] Develop a Python package to act as an API for the models
-- [ ] Write a comprehensive white paper detailing the training process and methodology
 - [ ] Improve SNAC training for better non-English language support
 - [ ] Expand training datasets for enhanced speaker consistency
 
