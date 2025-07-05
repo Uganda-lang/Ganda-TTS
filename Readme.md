@@ -258,7 +258,7 @@ If you use these models in your research or applications, please cite:
 @misc{uganda_tts_2024,
     author = {Kisejjere Rashid and Magala Reuben},
     title = {Uganda Text-to-Speech (TTS) Models},
-    year = {2024},
+    year = {2025},
     howpublished = {\url{https://huggingface.co/Uganda-lang}},
     note = {Fine-tuned versions of Orpheus 3B for Ugandan languages}
 }
