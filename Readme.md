@@ -61,7 +61,7 @@ This architecture enables efficient and high-quality speech synthesis while main
 
 ### English Inference Example
 
-Below is an example of how to use the Uganda TTS English model for inference. For other languages, please visit the [HuggingFace repository](https://huggingface.co/Uganda-lang) for the appropriate model names and instructions.
+Below is an example of how to use the Uganda TTS English model for inference. For other languages, please visit the [HuggingFace repository](https://huggingface.co/USOAL) for the appropriate model names and instructions.
 
 ```python
 from unsloth import FastLanguageModel
