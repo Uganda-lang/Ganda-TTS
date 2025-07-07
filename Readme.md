@@ -255,10 +255,10 @@ While these models represent significant progress in Ugandan language TTS, there
 If you use these models in your research or applications, please cite:
 
 ```bibtex
-@misc{uganda_tts_2024,
+@misc{uganda_tts_2025,
     author = {Kisejjere Rashid and Magala Reuben},
     title = {Uganda Text-to-Speech (TTS) Models},
     year = {2025},
-    howpublished = {\url{https://huggingface.co/Uganda-lang}},
+    howpublished = {\url{https://huggingface.co/USOAL}},
     note = {Fine-tuned versions of Orpheus 3B for Ugandan languages}
 }
